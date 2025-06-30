@@ -280,18 +280,16 @@ const Home = () => {
                 
                 <div className="mt-8 p-6 bg-gray-800 rounded-lg">
                   <h4 className="font-bold text-brand-gold mb-3">وسم العدالة</h4>
-                  <p className="text-sm text-gray-300">
+                  <p className="text-sm text-gray-300 mb-4">
                     للمحاماة والاستشارات القانونية - نقدم خدمات قانونية متكاملة وموثوقة
                   </p>
-                </div>
-
-                {/* Google Maps Link */}
-                <div className="mt-6">
+                  
+                  {/* Google Maps Button */}
                   <a
                     href="https://maps.app.goo.gl/mJbAZdQjPSBiPVbQ7"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-brand-gold hover:bg-opacity-90 text-white rounded-lg transition-colors duration-300 text-sm"
+                    className="inline-flex items-center px-4 py-2 bg-brand-gold hover:bg-opacity-90 text-white rounded-lg transition-colors duration-300 text-sm w-full justify-center"
                   >
                     <MapPin className="h-4 w-4 ml-2" />
                     عرض على خرائط Google
