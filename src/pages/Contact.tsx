@@ -323,23 +323,39 @@ const Contact = () => {
 
             {/* Map & Additional Info */}
             <div className="space-y-8 scroll-animate">
-              {/* Map */}
-              <div className="bg-gray-100 rounded-2xl overflow-hidden h-64">
-                <div className="w-full h-full flex items-center justify-center bg-brand-beige">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-brand-gold mx-auto mb-4" />
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">موقعنا</h3>
-                    <p className="text-gray-600 mb-4">الرياض - الملقا - طريق أنس بن مالك</p>
-                    <a
-                      href="https://maps.app.goo.gl/mJbAZdQjPSBiPVbQ7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-4 py-2 bg-brand-gold text-white rounded-lg hover:bg-opacity-90 transition-colors duration-300"
-                    >
-                      <MapPin className="h-4 w-4 ml-2" />
-                      عرض على الخريطة
-                    </a>
-                  </div>
+              {/* Google Maps */}
+              <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+                <div className="p-4 bg-brand-gold text-white">
+                  <h3 className="text-lg font-semibold flex items-center">
+                    <MapPin className="h-5 w-5 ml-2" />
+                    موقعنا على الخريطة
+                  </h3>
+                </div>
+                <div className="h-80">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.6234567890123!2d46.6753!3d24.7136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2z2LfYsdmK2YIg2KPZhNizINio2YYg2YXYp9mE2YPYjCDYp9mE2YXZhNmC2KfYjCDYp9mE2LHZitin2LYgMTI0NjI!5e0!3m2!1sar!2ssa!4v1234567890123!5m2!1sar!2ssa"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="موقع وسم العدالة للمحاماة والاستشارات القانونية"
+                  ></iframe>
+                </div>
+                <div className="p-4 bg-white">
+                  <p className="text-gray-600 text-sm mb-3">
+                    الرياض - الملقا - طريق أنس بن مالك
+                  </p>
+                  <a
+                    href="https://maps.app.goo.gl/mJbAZdQjPSBiPVbQ7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-brand-gold text-white rounded-lg hover:bg-opacity-90 transition-colors duration-300 text-sm"
+                  >
+                    <MapPin className="h-4 w-4 ml-2" />
+                    فتح في خرائط Google
+                  </a>
                 </div>
               </div>
 

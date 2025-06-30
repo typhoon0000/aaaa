@@ -16,7 +16,8 @@ import {
   BookOpen,
   FileText,
   Gavel,
-  Building
+  Building,
+  MapPin
 } from 'lucide-react';
 
 const Home = () => {
@@ -232,7 +233,7 @@ const Home = () => {
 
       {/* Contact Form Section */}
       <section className="py-16 bg-brand-gold">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 scroll-animate">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               تواصل معنا
@@ -243,7 +244,7 @@ const Home = () => {
           </div>
 
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden scroll-animate">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="grid grid-cols-1 lg:grid-cols-3">
               {/* Contact Info */}
               <div className="bg-gray-900 p-8 lg:p-12 text-white">
                 <h3 className="text-2xl font-bold mb-6">معلومات التواصل</h3>
@@ -266,6 +267,15 @@ const Home = () => {
                       <p className="text-gray-300">info@wasm-aladala.com</p>
                     </div>
                   </div>
+                  <div className="flex items-center">
+                    <div className="bg-brand-gold p-3 rounded-lg ml-4">
+                      <MapPin className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">العنوان</p>
+                      <p className="text-gray-300">الرياض - الملقا - طريق أنس بن مالك</p>
+                    </div>
+                  </div>
                 </div>
                 
                 <div className="mt-8 p-6 bg-gray-800 rounded-lg">
@@ -274,10 +284,23 @@ const Home = () => {
                     للمحاماة والاستشارات القانونية - نقدم خدمات قانونية متكاملة وموثوقة
                   </p>
                 </div>
+
+                {/* Google Maps Link */}
+                <div className="mt-6">
+                  <a
+                    href="https://maps.app.goo.gl/mJbAZdQjPSBiPVbQ7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-brand-gold hover:bg-opacity-90 text-white rounded-lg transition-colors duration-300 text-sm"
+                  >
+                    <MapPin className="h-4 w-4 ml-2" />
+                    عرض على خرائط Google
+                  </a>
+                </div>
               </div>
 
               {/* Contact Form */}
-              <div className="p-8 lg:p-12">
+              <div className="lg:col-span-2 p-8 lg:p-12">
                 {submitStatus === 'success' && (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
                     <div className="flex items-center">
@@ -290,39 +313,41 @@ const Home = () => {
                 )}
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      الاسم الكامل *
-                    </label>
-                    <div className="relative">
-                      <User className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all duration-300"
-                        placeholder="أدخل اسمك الكامل"
-                      />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        الاسم الكامل *
+                      </label>
+                      <div className="relative">
+                        <User className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all duration-300"
+                          placeholder="أدخل اسمك الكامل"
+                        />
+                      </div>
                     </div>
-                  </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      البريد الإلكتروني *
-                    </label>
-                    <div className="relative">
-                      <Mail className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all duration-300"
-                        placeholder="أدخل بريدك الإلكتروني"
-                      />
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        البريد الإلكتروني *
+                      </label>
+                      <div className="relative">
+                        <Mail className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full pl-4 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-gold focus:border-transparent transition-all duration-300"
+                          placeholder="أدخل بريدك الإلكتروني"
+                        />
+                      </div>
                     </div>
                   </div>
 
